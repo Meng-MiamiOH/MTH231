@@ -35,17 +35,17 @@
             for (i = 1; i<= n;i++) {
                 arrRaw[i-1]= i;
             }
-            
+            var arr = [n];
             for (var i = 0; i < n; i++) {
                 for (var j = i; j < i + k; j++) {
                     var x = j % n;
-                    arrRaw.push(arrRaw[x]);
+                    arr.push(arrRaw[x]);
                 }
                
             }
             // TODO: Find the subsets that have exactly k elements of arrRaw
             
-            return arrRaw;
+            return arr;
         }
 
         function submit() {
