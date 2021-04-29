@@ -31,7 +31,11 @@
         }
 
         function subset(n,k) {
-            var arrRaw = [];
+            var arrRaw = [n];
+            for (i = 1; i<= n;i++) {
+                arrRaw[i-1]= i;
+            }
+            
             for (var i = 0; i < n; i++) {
                 for (var j = i; j < i + k; j++) {
                     var x = j % n;
