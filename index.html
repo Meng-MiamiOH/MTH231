@@ -38,13 +38,14 @@
             var arr = [k];
             for (var i = 0; i < n; i++) {
                 var z = 0;
+                [
                 for (var j = i; j < i + k; j++) {
                     var x = j % n;
                     
                     arr[z] = arrRaw[x];
                     z++;
                 }
-               
+                
             }
             // TODO: Find the subsets that have exactly k elements of arrRaw
             
