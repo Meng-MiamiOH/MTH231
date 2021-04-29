@@ -32,8 +32,12 @@
 
         function subset(n,k) {
             var arrRaw = [];
-            for (var i = 1; i <= n; i++) {
-                arrRaw.push(i);
+            for (var i = 0; i < n; i++) {
+                for (var j = i; j < i + k; j++) {
+                    var x = j % n;
+                    arrRaw.push(arrRaw[x]);
+                }
+               
             }
             // TODO: Find the subsets that have exactly k elements of arrRaw
             
