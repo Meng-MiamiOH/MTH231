@@ -30,25 +30,20 @@
             return outcome;
         }
 
-        function subset(n,k) {
+        function subset(n, k) {
             var arrRaw = [n];
-            for (i = 1; i<= n;i++) {
-                arrRaw[i-1]= i;
+            for (i = 1; i <= n; i++) {
+                arrRaw[i - 1] = i;
             }
             var arr = [k];
             for (var i = 0; i < n; i++) {
                 var z = 0;
-                [
                 for (var j = i; j < i + k; j++) {
                     var x = j % n;
-                    
                     arr[z] = arrRaw[x];
                     z++;
                 }
-                
             }
-            // TODO: Find the subsets that have exactly k elements of arrRaw
-            
             return arr;
         }
 
@@ -71,7 +66,7 @@
                         var numerator = factorial(n);
                         var denominator = factorial(k) * factorial(n - k);
                         text = "The value of <i>n</i> choose <i>k</i>: " + numerator / denominator;
-                        document.getElementById("subsets").innerHTML = "Subsets: " + subset(n,k);
+                        document.getElementById("subsets").innerHTML = "Subsets: " + subset(n, k);
                     } else {
                         text = "Please check your input. It has to be <i>n</i> ≥ <i>k</i> ≥ 0."
                     }
