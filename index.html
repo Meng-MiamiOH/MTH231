@@ -31,11 +31,11 @@
         }
 
         function subset(n, k) {
-            var arrRaw = [n];
-            for (i = 1; i <= n; i++) {
-                arrRaw[i - 1] = i;
+            var arrRaw = [];
+            for (var ind = 1; ind <= n; ind++) {
+                arrRaw.push(ind);
             }
-            var arr = [k];
+            var arr = [];
             for (var i = 0; i < n; i++) {
                 var z = 0;
                 for (var j = i; j < i + k; j++) {
@@ -44,7 +44,7 @@
                     z++;
                 }
             }
-            return arr;
+            return "[" + arr + "]";
         }
 
         function submit() {
