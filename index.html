@@ -1,21 +1,10 @@
-<!-- For the group of:
-Obed Amaning
-Lauren Bockelman
-Elvis Hernandez
-Justin Owens
-Henry Pierce
-Meng Qu
-Emily Turcotte
-In April, 2021
-At Miami University, Spring 2021
--->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTH 231 Group Project</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -24,7 +13,7 @@ At Miami University, Spring 2021
         <p>Input integers <i>n</i> and k (<i>n</i> ≥ <i>k</i> ≥ 0):</p>
         Number <i>n</i>: <input id="numN" type="number"><br />
         Number <i>k</i>: <input id="numK" type="number"><br />
-        <button type="button" onclick="submit()">Submit</button>
+    <button type="button" onclick="submit()">Submit</button>
         <p id="nChooseK" style="color:coral;"></p>
         <p id="subsets" style="color:cornflowerblue"></p>
     </div>
@@ -43,7 +32,7 @@ At Miami University, Spring 2021
 
         function subset(n, k) {
             if (k == 0) {
-                return "EMPTY";
+                return "{Ø}";
             }
             else {
                 var arrRaw = [];
@@ -58,7 +47,7 @@ At Miami University, Spring 2021
                         arr.push(arrRaw[z % n]);
                         z++;
                     }
-                    arr.push(']');
+                    arr.push(']', '<br/>');
                 }
                 return arr.join();
             }
@@ -83,7 +72,7 @@ At Miami University, Spring 2021
                         var numerator = factorial(n);
                         var denominator = factorial(k) * factorial(n - k);
                         text = "The value of <i>n</i> choose <i>k</i>: " + numerator / denominator;
-                        document.getElementById("subsets").innerHTML = "Subsets: " + subset(n, k).replaceAll('[,', '[').replaceAll(',]', ']');
+                        document.getElementById("subsets").innerHTML = "Subsets: " + "<br/>" + subset(n, k).replaceAll('[,', '[').replaceAll(',]', ']');
                     } else {
                         text = "Please check your input. It has to be <i>n</i> ≥ <i>k</i> ≥ 0."
                     }
