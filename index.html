@@ -30,7 +30,7 @@
             return outcome;
         }
 
-        function subset(n, k) {
+        function subset(n, k, end) {
             if (k == 0) {
                 return "{Ø}";
             }
@@ -39,8 +39,12 @@
                 for (var ind = 1; ind <= n; ind++) {
                     arrRaw.push(ind);
                 }
+                if (n==k){
+                    return arrRaw.join();
+                }
+
                 var arr = [];
-                for (var i = 0; i < n; i++) {
+                for (var i = 0; i < end; i++) {
                     var z = i;
                     arr.push('<li>{');
                     for (var j = 0; j < k; j++) {
@@ -72,7 +76,8 @@
                         var numerator = factorial(n);
                         var denominator = factorial(k) * factorial(n - k);
                         text = "The value of <i>n</i> choose <i>k</i>: " + numerator / denominator;
-                        document.getElementById("subsets").innerHTML = "Subsets: " + "<ol>" + subset(n, k).replaceAll('{,', '{').replaceAll(',}', '}').replaceAll(',{', '{').replaceAll('},', '}').replaceAll(',', ', ') + "</ol>";
+                        var end = numerator / denominator;
+                        document.getElementById("subsets").innerHTML = "Subsets: " + "<ol>" + subset(n, k, end).replaceAll('{,', '{').replaceAll(',}', '}').replaceAll(',{', '{').replaceAll('},', '}').replaceAll(',', ', ') + "</ol>";
                     } else {
                         text = "Please check your input. It has to be <i>n</i> ≥ <i>k</i> ≥ 0."
                     }
