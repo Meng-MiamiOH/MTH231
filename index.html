@@ -13,7 +13,7 @@
         <p>Input integers <i>n</i> and k (<i>n</i> ≥ <i>k</i> ≥ 0):</p>
         Number <i>n</i>: <input id="numN" type="number"><br />
         Number <i>k</i>: <input id="numK" type="number"><br />
-    <button type="button" onclick="submit()">Submit</button>
+        <button type="button" onclick="submit()">Submit</button>
         <p id="nChooseK" style="color:coral;"></p>
         <p id="subsets" style="color:cornflowerblue"></p>
     </div>
@@ -39,16 +39,15 @@
                 for (var ind = 1; ind <= n; ind++) {
                     arrRaw.push(ind);
                 }
-                if (n==k){
-                    return arrRaw.join();
+                if (n == k) {
+                    return "{ " + arrRaw.join() + " }";
                 }
-
                 var arr = [];
                 for (var i = 0; i < end; i++) {
                     var z = i;
                     arr.push('<li>{');
                     for (var j = 0; j < k; j++) {
-                        arr.push(arrRaw[z % n]);
+                        arr.push(arrRaw[(z) % n]);
                         z++;
                     }
                     arr.push('}');
