@@ -42,12 +42,12 @@
                 var arr = [];
                 for (var i = 0; i < n; i++) {
                     var z = i;
-                    arr.push('[');
+                    arr.push('{');
                     for (var j = 0; j < k; j++) {
                         arr.push(arrRaw[z % n]);
                         z++;
                     }
-                    arr.push(']', '<br/>');
+                    arr.push('}', '<br/>');
                 }
                 return arr.join();
             }
@@ -72,7 +72,7 @@
                         var numerator = factorial(n);
                         var denominator = factorial(k) * factorial(n - k);
                         text = "The value of <i>n</i> choose <i>k</i>: " + numerator / denominator;
-                        document.getElementById("subsets").innerHTML = "Subsets: " + "<br/>" + subset(n, k).replaceAll('[,', '[').replaceAll(',]', ']').replaceAll(',[', '[').replaceAll('],', ']').replaceAll(',', ', ');
+                        document.getElementById("subsets").innerHTML = "Subsets: " + "<br/>" + subset(n, k).replaceAll('{,', '{').replaceAll(',}', '}').replaceAll(',{', '{').replaceAll('},', '}').replaceAll(',', ', ');
                     } else {
                         text = "Please check your input. It has to be <i>n</i> ≥ <i>k</i> ≥ 0."
                     }
